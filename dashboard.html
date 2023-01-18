@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <style>
+        html,
+        body {
+            font-family: 'Rubik', sans-serif;
+            color: #242424;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+        }
+
+        #left-menu {
+            background-color: #1E1E25;
+            color: #fff;
+        }
+
+        hr {
+            height: 1px;
+            width: 100%;
+            margin: 45px 0;
+            background: #ddd;
+            border: 0;
+            display: block;
+        }
+
+        #left-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #left-menu a {
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        #left-menu a svg {
+            fill: #52D691;
+        }
+
+        #main-content {
+            padding: 54px 50px 0 69px;
+            background-color: #F6F6F6;
+        }
+
+        .main-heading {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .main-heading h2 {
+            color: #242424;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .main-heading .bi-arrow-right-short {
+            fill: #C1C1C1;
+            stroke: #C1C1C1;
+            width: 20px;
+            height: 20px;
+        }
+
+        .main-heading span {
+            color: #9B9B9B;
+            font-size: 28px;
+        }
+
+        .card summary {
+            display: flex;
+            justify-content: space-between;
+            background-color: #23232B;
+            border-radius: 12px 12px 0px 0px;
+            padding: 15px 24px;
+            cursor: pointer;
+        }
+
+        .card summary .title {
+            margin: 0;
+            display: flex;
+            font-size: 21px;
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        .card summary .title svg {
+            width: 22px;
+            height: 22px;
+            color: rgb(200, 174, 0);
+            margin-right: 20px;
+        }
+
+        .card summary .arrow {
+            position: relative;
+            color: #fff;
+            display: flex;
+            transition: all 300ms ease-in-out;
+        }
+
+        .card[open] summary .arrow {
+            transform: rotate(180deg);
+        }
+
+        .card-content {
+            background-color: #fff;
+            border: 1px solid #ECECEC;
+            border-top: 0;
+            border-radius: 0 0 12px 12px;
+            padding: 30px 26px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="left-menu">
+            <ul>
+                <li class="active">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person" viewBox="0 0 16 16">
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+                        </svg>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person" viewBox="0 0 16 16">
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+                        </svg>
+                        <span>Expert Advisors</span>
+                    </a>
+                </li>
+                <li class="has-sub">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person" viewBox="0 0 16 16">
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+                        </svg>
+                        <span>Licenses</span>
+                    </a>
+                    <ul>
+                        <li><a href="#">UI Elements Item 1</a></li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person" viewBox="0 0 16 16">
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+                        </svg>
+                        <span>Discounts</span>
+                    </a>
+                    <ul>
+                        <li><a href="#">Report Item 1</a></li>
+                        <li><a href="#">Report Item 2</a></li>
+                        <li><a href="#">Report Item 3</a></li>
+                        <li><a href="#">Report Item 3</a></li>
+                        <li><a href="#">Report Item 3</a></li>
+                        <li><a href="#">Report Item 3</a></li>
+                        <li><a href="#">Report Item 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-person" viewBox="0 0 16 16">
+                            <path
+                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+                        </svg>
+                        <span>Account</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="main-content">
+
+            <div id="page-container">
+                <div class="main-heading">
+                    <h2>ValeryTrading Dashboard Admin</h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+                    </svg>
+                    <span>Signals</span>
+                </div>
+                <hr>
+
+                <details class="card" open="">
+                    <summary>
+                        <h2 class="title">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-award" viewBox="0 0 16 16">
+                                <path
+                                    d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z" />
+                                <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z" />
+                            </svg>
+                            Golden Pickace
+                        </h2>
+                        <div class="arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24">
+                                <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"
+                                    style="fill: currentColor;" />
+                            </svg>
+                        </div>
+                    </summary>
+
+
+                    <div class="card-content">
+                        <div class="container-fluid">
+                            <div class="grid">
+                                <div class="grid-item">
+                                    <div class="balance-item-group">
+                                        <label for="">Name</label>
+                                        <img>
+                                    </div>
+                                </div>
+                                <div class="grid-item">
+                                    <div class="form-group">
+                                        <label for="">Name</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+
+                <div class="card">
+                    <div class="title">Users</div>
+                    <div class="content">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="">Name</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="">Name</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
